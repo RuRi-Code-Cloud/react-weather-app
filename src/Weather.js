@@ -1,5 +1,8 @@
 import React from "react";
 import "./Weather.css";
+import humi from "./humi.png";
+import prec from "./prec.png";
+import wind from "./wind.png";
 
 export default function Weather() {
   return (
@@ -14,28 +17,75 @@ export default function Weather() {
             />
           </div>
           <div className="col-3">
-            <input type="submit" value="search" className="btn btn-primary" />
+            <input
+              type="submit"
+              value="🔍"
+              className="btn btn-outline-secondary"
+            />
           </div>
         </div>
       </form>
-      <h1>Dublin</h1>
-      <ul>
-        <li>Monday 05:00</li>
-        <li>Cloudy</li>
-      </ul>
+      <h1>
+        {" "}
+        <th>Dublin</th>{" "}
+      </h1>
+
+      <div className="row">
+        <div className="col-6 one">
+          12 <span className="celsius">°C</span>
+        </div>
+        <div className="col-6 two">
+          <ul>
+            <li className="second-number">
+              <th>12:34</th>
+            </li>
+            <li>
+              {" "}
+              <th> MONDAY</th>{" "}
+            </li>
+          </ul>
+        </div>
+      </div>
       <div className="row">
         <div className="col-6">
-          <img
-            src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-            alt="Cloudy"
-          />
-          6°C
+          <ul className="ps-0">
+            <li>
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                alt="Cloudy"
+                width="130px"
+              />
+            </li>
+            <li>
+              {" "}
+              <th>CLOUDY</th>{" "}
+            </li>
+          </ul>
         </div>
         <div className="col-6">
           <ul>
-            <li>Percipitation:15%</li>
-            <li>Humidity:72%</li>
-            <li>Wind: 13km/h</li>
+            <li>
+              {" "}
+              <img src={prec} alt="precipitation" />{" "}
+              <strong>
+                <span className="number">15</span>%
+              </strong>{" "}
+            </li>
+            <li>
+              {" "}
+              <img src={humi} alt="humidity" />{" "}
+              <strong>
+                <span className="number">72</span>%
+              </strong>{" "}
+            </li>
+            <li>
+              {" "}
+              <img src={wind} alt="wind" />{" "}
+              <strong>
+                {" "}
+                <span className="number">13</span> km/h
+              </strong>{" "}
+            </li>
           </ul>
         </div>
       </div>

@@ -7,7 +7,7 @@ function App() {
       <div className="container">
         <Weather />
         <footer>
-          This project was coded by{" "}
+          Coded by{" "}
           <a
             href="https://www.linkedin.com/in/rita-rudzite-6440a0271/"
             target="_blank"
