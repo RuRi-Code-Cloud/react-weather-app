@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
+import CurrantDate from "./CurrantDate";
 import "./Weather.css";
 import humi from "./humi.png";
 import wind from "./wind.png";
 
-export default function Weather() {
+export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   function showResponse(response) {
     console.log(response.data);
@@ -16,8 +17,7 @@ export default function Weather() {
       humidity: response.data.temperature.humidity,
       description: response.data.condition.description,
       name: response.data.city,
-      day: "Monday",
-      time: "12:34",
+      date: new Date(),
       icon_url:
         "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png",
     });
@@ -55,12 +55,9 @@ export default function Weather() {
           </div>
           <div className="col-6 two">
             <ul>
-              <li className="second-number">
-                <th>{weatherData.time}</th>
-              </li>
+              <li className="second-number"></li>
               <li className="text-uppercase">
-                {" "}
-                <th> {weatherData.day}</th>{" "}
+                <CurrantDate date={weatherData.date} />
               </li>
             </ul>
           </div>
@@ -75,10 +72,7 @@ export default function Weather() {
                   width="130px"
                 />
               </li>
-              <li className="text-uppercase">
-                {" "}
-                <th>{weatherData.description}</th>{" "}
-              </li>
+              <li className="text-uppercase"> {weatherData.description} </li>
             </ul>
           </div>
           <div className="col-6">
@@ -105,8 +99,7 @@ export default function Weather() {
     );
   } else {
     const apiKey = "2b03bfeb040ctdb92faf2af53622202o";
-    let city = "Oslo";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.city}&key=${apiKey}`;
     axios.get(apiUrl).then(showResponse);
 
     return "Loading..";
