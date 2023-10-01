@@ -4,6 +4,7 @@ import humi from "./humi.png";
 import wind from "./wind.png";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
+import "./WeatherInfo.css";
 
 export default function WeatherInfo(props) {
   return (
@@ -14,22 +15,19 @@ export default function WeatherInfo(props) {
       </h1>
 
       <div className="row">
-        <div className="col-6 one">
+        <div className="col-6 ">
           <WeatherTemperature celsius={props.data.temperature} />
         </div>
         <div className="col-6 two">
-          <ul>
-            <li className="second-number"></li>
-            <li className="text-uppercase">
-              <CurrantDate date={props.data.date} />
-            </li>
-          </ul>
+          <div className="text-uppercase">
+            <CurrantDate date={props.data.date} />
+          </div>
         </div>
       </div>
       <div className="row">
         <div className="col-6">
           <ul className="ps-0">
-            <li>
+            <li className="icon">
               <WeatherIcon code={props.data.icon} />
             </li>
             <li className="text-uppercase"> {props.data.description} </li>

@@ -2,7 +2,17 @@ body {
   background-image: url(https://e1.pxfuel.com/desktop-wallpaper/286/965/desktop-wallpaper-buy-pastels-watercolor-world-map-2021-world-map.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  margin: 0;
+  padding: 0;
 }
 a {
   color: rgb(92, 162, 192);
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  margin-top: 50px;
+  padding-top: 50px;
 }
