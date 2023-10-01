@@ -2,6 +2,7 @@ import React from "react";
 import CurrantDate from "./CurrantDate";
 import humi from "./humi.png";
 import wind from "./wind.png";
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherInfo(props) {
   return (
@@ -28,11 +29,7 @@ export default function WeatherInfo(props) {
         <div className="col-6">
           <ul className="ps-0">
             <li>
-              <img
-                src={props.data.icon_url}
-                alt={props.data.description}
-                width="130px"
-              />
+              <WeatherIcon code={props.data.icon} />
             </li>
             <li className="text-uppercase"> {props.data.description} </li>
           </ul>
