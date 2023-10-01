@@ -3,6 +3,7 @@ import CurrantDate from "./CurrantDate";
 import humi from "./humi.png";
 import wind from "./wind.png";
 import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherInfo(props) {
   return (
@@ -14,7 +15,7 @@ export default function WeatherInfo(props) {
 
       <div className="row">
         <div className="col-6 one">
-          {props.data.temperature} <span className="celsius">°C</span>
+          <WeatherTemperature celsius={props.data.temperature} />
         </div>
         <div className="col-6 two">
           <ul>
