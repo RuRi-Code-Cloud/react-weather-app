@@ -22,7 +22,12 @@ function App() {
             rel="noreferrer"
           >
             open-sourced on Github
+          </a>{" "}
+          hosted by{" "}
+          <a href="https://www.netlify.com/" target="_blank" rel="noreferrer">
+            Netlify
           </a>
+          .
         </footer>
       </div>
     </div>
