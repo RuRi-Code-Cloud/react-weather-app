@@ -1,7 +1,5 @@
 import React from "react";
 import CurrantDate from "./CurrantDate";
-import humi from "./humi.png";
-import wind from "./wind.png";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
 import "./WeatherInfo.css";
@@ -9,10 +7,7 @@ import "./WeatherInfo.css";
 export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">
-      <h1 className="text-uppercase">
-        {" "}
-        <th>{props.data.name}</th>{" "}
-      </h1>
+      <h1 className="text-uppercase"> {props.data.name} </h1>
 
       <div className="row">
         <div className="col-6 ">
@@ -37,14 +32,14 @@ export default function WeatherInfo(props) {
           <ul>
             <li>
               {" "}
-              <img src={humi} alt="humidity" />{" "}
+              HUMIDITY{" "}
               <strong>
                 <span className="number">{props.data.humidity}</span>%
               </strong>{" "}
             </li>
             <li>
               {" "}
-              <img src={wind} alt="wind" />{" "}
+              WIND{" "}
               <strong>
                 {" "}
                 <span className="number">{props.data.wind}</span> km/h
